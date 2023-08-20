@@ -6,7 +6,7 @@ import { persistReducer, persistStore } from 'redux-persist';
 
 import roomsReducer from './reducers/roomsSlice';
 import reservationReducer from './reducers/reservationSlice';
-import roomsSaga from './sagas/room';
+import rootSaga from './sagas';
 
 const sagaMiddleWare = createSagaMiddleware();
 
@@ -25,7 +25,7 @@ const store = configureStore({
   middleware: [sagaMiddleWare],
 });
 
-sagaMiddleWare.run(roomsSaga);
+sagaMiddleWare.run(rootSaga);
 
 export default store;
 export const persistor = persistStore(store);

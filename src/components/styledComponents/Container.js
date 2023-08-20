@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-//Block container that will be 100% of the parent element
+/**
+ * Block container that will be 100% of the parent element.
+ * @return {React.ReactElement} Block Container
+ */
 export const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -17,7 +20,11 @@ export const Container = styled.div`
   }
 `;
 
-//Flex container with the option to define the spacing between its elements through
+/**
+ * Flex container with the option to define the spacing between its elements through.
+ * @param {String} $gap - Space between its items
+ * @return {React.ReactElement} Flex Container
+ */
 export const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -25,13 +32,21 @@ export const FlexContainer = styled.div`
   gap: ${(props) => props.$gap || 0};
 `;
 
-//Flex item with the option of defining the alignment of the text and the size it will take up inside the flex container
+/**
+ * Flex item with the option of defining the alignment of the text and the size it will take up inside the flex container.
+ * @param {Number} $flex - Size it will take up inside the flex container
+ * @param {String} $align - Alignment of the text inside
+ * @return {React.ReactElement} Flex Item
+ */
 export const FlexItem = styled.div`
   flex: ${(props) => props.$flex || 1};
   text-align: ${(props) => props.$align || 'left'};
 `;
 
-//Vertically centered flex item that inherits from the FlexItem
+/**
+ * Vertically centered flex item that inherits from the FlexItem.
+ * @return {React.ReactElement} Center Flex Item
+ */
 export const CenterFlexItem = styled(FlexItem)`
   margin: auto;
 `;

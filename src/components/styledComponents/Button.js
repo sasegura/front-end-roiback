@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-//Styles of the green button element
+/**
+ * Styles of the green button element.
+ * @return {React.ReactElement} Green Button
+ */
 export const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.green};
   color: ${({ theme }) => theme.colors.white};
@@ -26,5 +29,8 @@ export const Button = styled.button`
     background-color: ${({ theme }) => theme.colors.darkGreen};
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
       0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  }
+  &:focus {
+    background-color: ${({ theme }) => theme.colors.lightGreen};
   }
 `;

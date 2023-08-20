@@ -11,20 +11,29 @@ export const rotate = keyframes`
   }
 `;
 
-/* Loading icon styles */
+/**
+ * Loading icon styles.
+ * @return {React.ReactElement} Loading Icon
+ */
 export const LoadingIcon = styled(AiOutlineLoading3Quarters)`
   display: block;
-  height: 42px;
-  width: 42px;
+  height: ${(props) => props.height || '42px'};
+  width: ${(props) => props.height || '42px'};
 `;
 
-/* Loading container styles */
+/**
+ * Loading container styles.
+ * @return {React.ReactElement} Loading container
+ */
 export const LoadingContainer = styled.div`
-  color: ${({ theme }) => theme.colors.green};
+  color: ${(props) =>
+    props.$light
+      ? ({ theme }) => theme.colors.white
+      : ({ theme }) => theme.colors.green};
   animation: 1.4s linear 0s infinite normal none running ${rotate};
   display: inline-block;
-  height: 42px;
-  width: 42px;
+  height: ${(props) => props.height || '42px'};
+  width: ${(props) => props.height || '42px'};
   margin: auto;
   position: absolute;
   left: 0;

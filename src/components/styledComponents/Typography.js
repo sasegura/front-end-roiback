@@ -1,11 +1,34 @@
 import { styled } from 'styled-components';
 
-//Definition of the different font styles used in the application
+/**
+ * H1 object wiyh styles.
+ */
+export const Heading1 = styled.h1`
+  font-size: 2rem;
+  text-align: ${(props) => props.$align || 'left'};
+`;
 
+/**
+ * H2 object wiyh styles.
+ */
 export const Heading2 = styled.h2`
   font-weight: 500;
 `;
 
+/**
+ * H3 object wiyh styles.
+ */
+export const Heading3 = styled.h3`
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 10px;
+  text-align: ${(props) => props.$align || 'left'};
+`;
+
+/**
+ * Paragraph1 object wiyh styles.
+ */
 export const Paragraph1 = styled.p`
   font-size: 0.9rem;
   font-weight: 500;
@@ -15,6 +38,9 @@ export const Paragraph1 = styled.p`
   }
 `;
 
+/**
+ * Paragraph2 object wiyh styles.
+ */
 export const Paragraph2 = styled.p`
   font-size: 1rem;
   font-weight: 400;
@@ -25,6 +51,9 @@ export const Paragraph2 = styled.p`
   }
 `;
 
+/**
+ * Span object wiyh styles-LightText.
+ */
 export const LightText = styled.span`
   font-size: 1rem;
   font-weight: 300;

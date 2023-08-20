@@ -16,6 +16,10 @@ import { LightText } from '../../components/styledComponents/Typography';
 import { DateRange, StyledCalendarIcon } from './RoomsPage.styles';
 import { DateTransform } from '../../utils/utilFunctions';
 
+/**
+ * Container that show all the information of rooms to select.
+ * @return {React.Component}
+ */
 const Rooms = () => {
   const roomsData = useSelector(rooms);
   const roomsDates = useSelector(dates);
@@ -42,6 +46,7 @@ const Rooms = () => {
     newRoomData.dateOut = roomsDates.checkout;
 
     dispatch(updateRoom(newRoomData));
+    navigate('/resume');
   };
 
   return (
