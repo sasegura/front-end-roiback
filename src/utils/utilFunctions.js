@@ -5,3 +5,7 @@ export const capitalizeString = (str) => {
 export function DateTransform(date) {
   return new Date(date).toLocaleDateString('es-ES');
 }
+
+export function DatesParse(dateIn, dateOut) {
+  return `${DateTransform(dateIn)} - ${DateTransform(dateOut)}`;
+}

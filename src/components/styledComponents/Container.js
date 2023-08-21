@@ -30,6 +30,7 @@ export const FlexContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: ${(props) => props.$gap || 0};
+  align-items: ${(props) => props.$alignItems || 'center'};
 `;
 
 /**
