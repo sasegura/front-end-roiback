@@ -63,3 +63,10 @@ export const LightText = styled.span`
     font-size: 0.9rem;
   }
 `;
+
+/**
+ * Paragraph object wiyh styles-BigText.
+ */
+export const BigText = styled.p`
+  font-size: 1.5rem;
+`;
