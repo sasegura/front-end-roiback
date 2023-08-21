@@ -9,7 +9,7 @@ import { LoadingContainer, LoadingIcon } from '../styledComponents/Loading';
  */
 const Loading = ({ light, height }) => {
   return (
-    <LoadingContainer height={height} $light={light}>
+    <LoadingContainer data-testid="loadingIcon" height={height} $light={light}>
       <LoadingIcon height={height} />
     </LoadingContainer>
   );

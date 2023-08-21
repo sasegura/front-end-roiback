@@ -2,10 +2,10 @@ import React from 'react';
 import RoomCardInfo from '../../components/RoomCardInfo/RoomCardInfo';
 import { Container } from '../../components/styledComponents/Container';
 import Loading from '../../components/Loading/Loading';
-import { LightText } from '../../components/styledComponents/Typography';
-import { DateRange, StyledCalendarIcon } from './RoomsPage.styles';
-import { DateTransform } from '../../utils/utilFunctions';
 import useRoomsPage from './useRoomsPage';
+import Dates from '../../components/Date/Dates';
+import { CalendarIcon } from '../../components/styledComponents/Icons';
+import { DateRange } from '../../components/styledComponents/Dates';
 
 /**
  * Container that show all the information of rooms to select.
@@ -17,7 +17,6 @@ const Rooms = () => {
     roomsDates,
     isRoomsLoading,
     hasErrorFetching,
-    roomsList,
     handleSelectedRoom,
   } = useRoomsPage();
 
@@ -25,18 +24,19 @@ const Rooms = () => {
     <Container>
       {isRoomsLoading && <Loading />}
       {!hasErrorFetching && !isRoomsLoading && roomsData?.length === 0 && (
-        <p>No hay cursos disponibles</p>
+        <p>No hay habitaciones disponibles</p>
       )}
       {!hasErrorFetching && !isRoomsLoading && roomsData?.length > 0 && (
         <>
           <DateRange>
-            <StyledCalendarIcon />
-            <LightText>{`${DateTransform(
-              roomsDates?.checkin
-            )} - ${DateTransform(roomsDates?.checkout)}`}</LightText>
+            <CalendarIcon />
+            <Dates
+              dateIn={roomsDates?.checkin}
+              dateOut={roomsDates?.checkout}
+            />
           </DateRange>
 
-          {roomsList?.map((room, index) => (
+          {roomsData?.map((room, index) => (
             <RoomCardInfo
               key={`roomCard${index}`}
               rooms={room.boards}

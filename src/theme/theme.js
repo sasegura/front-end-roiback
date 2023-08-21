@@ -30,7 +30,7 @@ const theme = {
 
 /**
  * Provider to access the theme object from the entire application.
- * @param {Component} children - Brief description of the parameter here. Note: For other notations of data types, please refer to JSDocs: DataTypes command.
+ * @param {Component} children
  * @return {ReactJSXElement} Theme.
  */
 const Theme = ({ children }) => (

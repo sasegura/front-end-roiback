@@ -6,6 +6,10 @@ const myPromise = new Promise((resolve, reject) => {
   }, 1000);
 });
 
+/**
+ * service to get rooms.
+ * @return {Object} return rooms information
+ */
 export const getRooms = async () => {
   const rooms = await myPromise.then(async (response) => response);
   return rooms;

@@ -35,6 +35,7 @@ const useRoomsPage = () => {
           filterRoom.price === room.price && filterRoom.name === room.name
       );
     });
+
     newRoomData.category = roomCategory.name;
     newRoomData.dateIn = roomsDates.checkin;
     newRoomData.dateOut = roomsDates.checkout;
@@ -42,6 +43,7 @@ const useRoomsPage = () => {
     dispatch(updateRoom(newRoomData));
     navigate('/resume');
   };
+
   return {
     roomsData,
     roomsDates,

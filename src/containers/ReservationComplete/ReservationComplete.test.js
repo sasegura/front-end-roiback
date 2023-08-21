@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import { renderWithWrapper } from '../../utils/TestWrapper';
 import { initialState, room, user } from '../../utils/MockData';
 import ReservationComplete from './ReservationComplete';
-import { DateTransform, capitalizeString } from '../../utils/utilFunctions';
+import { DatesParse, capitalizeString } from '../../utils/utilFunctions';
 
 describe('ReservationComplete', () => {
   beforeEach(async () => {
@@ -27,7 +27,7 @@ describe('ReservationComplete', () => {
       `Total: $${room?.price}`
     );
     const reservationRoomDate = await screen.findByText(
-      `${DateTransform(room.dateIn)} - ${DateTransform(room.dateOut)}`
+      `${DatesParse(room.dateIn, room.dateOut)}`
     );
     const reservationRoomName = await screen.findByText(
       capitalizeString(room.name)

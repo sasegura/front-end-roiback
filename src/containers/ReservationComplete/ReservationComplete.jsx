@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Card,
   CardSectionBorder,
+  CardSectionBorderTextAlignCenter,
 } from '../../components/styledComponents/Card';
 import { Container } from '../../components/styledComponents/Container';
 import { useSelector } from 'react-redux';
@@ -11,13 +12,11 @@ import {
   Heading2,
   LightText,
   Paragraph1,
-} from '../../components/styledComponents/Typography';
-import {
-  GreenCheckIcon,
-  StyledCardSectionBorder,
   StyledHeading2,
-} from './ReservationComplete.styles';
-import { DateTransform, capitalizeString } from '../../utils/utilFunctions';
+} from '../../components/styledComponents/Typography';
+import { capitalizeString } from '../../utils/utilFunctions';
+import Dates from '../../components/Date/Dates';
+import { GreenCheckIcon } from '../../components/styledComponents/Icons';
 
 /**
  * Container that show all the information of rooms to select.
@@ -30,17 +29,16 @@ const ReservationComplete = () => {
   return (
     <Container>
       <Card $minWidth={'250px'}>
-        <StyledCardSectionBorder $paddingY="50px" $align="center">
+        <CardSectionBorderTextAlignCenter $paddingY="50px" $align="center">
           <GreenCheckIcon />
           <BigText>Reserva Y54621</BigText>
-        </StyledCardSectionBorder>
+        </CardSectionBorderTextAlignCenter>
         <CardSectionBorder>
           <Heading2>{capitalizeString(reservationData.category)}</Heading2>
-          <LightText>
-            {`${DateTransform(reservationData?.dateIn)} - ${DateTransform(
-              reservationData?.dateOut
-            )}`}
-          </LightText>
+          <Dates
+            dateIn={reservationData?.dateIn}
+            dateOut={reservationData?.dateOut}
+          />
           <Paragraph1>{capitalizeString(reservationData?.name)}</Paragraph1>
         </CardSectionBorder>
         <CardSectionBorder>

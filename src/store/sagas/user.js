@@ -8,7 +8,7 @@ import { updateUserOnApi } from '../../api/updateUser';
 
 /**
  * Update user by api call.
- * @param {Object} payload - Brief description of the parameter here. Note: For other notations of data types, please refer to JSDocs: DataTypes command.
+ * @param {Object} payload
  */
 export function* updateUserSaga({ payload }) {
   try {

@@ -1,8 +1,14 @@
-import { DatesParse, capitalizeString } from '../../utils/utilFunctions';
+import { capitalizeString } from '../../utils/utilFunctions';
+import Dates from '../Date/Dates';
 import { Card, CardSectionBorder, CardTitle } from '../styledComponents/Card';
 import { FlexContainer, FlexItem } from '../styledComponents/Container';
-import { Heading2, Heading3, LightText } from '../styledComponents/Typography';
+import { Heading2, Heading3 } from '../styledComponents/Typography';
 
+/**
+ * Reservation Resume component.
+ * @param {Object} reservationData - object with reservation data
+ * @return {React.ReactElement} Card with Reservation Resume
+ */
 export const ReservationResumeCard = ({ reservationData }) => (
   <>
     <Heading3>Resumen de tu reserva</Heading3>
@@ -13,10 +19,10 @@ export const ReservationResumeCard = ({ reservationData }) => (
       <CardSectionBorder $paddingL="25px">
         <FlexContainer>
           <FlexItem $flex={2}>
-            <LightText>{`${DatesParse(
-              reservationData?.dateIn,
-              reservationData?.dateOut
-            )}`}</LightText>
+            <Dates
+              dateIn={reservationData?.dateIn}
+              dateOut={reservationData?.dateOut}
+            />
             <Heading2>{capitalizeString(reservationData?.name)}</Heading2>
           </FlexItem>
           <FlexItem $align="center">

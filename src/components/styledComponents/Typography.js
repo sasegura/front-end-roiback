@@ -16,6 +16,16 @@ export const Heading2 = styled.h2`
 `;
 
 /**
+ * Title inherited from heading2 and uppercase.
+ * @return {React.ReactElement} StyledHeading2
+ */
+export const StyledHeading2 = styled(Heading2)`
+  text-transform: uppercase;
+  text-align: end;
+  margin-right: 10px;
+`;
+
+/**
  * H3 object wiyh styles.
  */
 export const Heading3 = styled.h3`

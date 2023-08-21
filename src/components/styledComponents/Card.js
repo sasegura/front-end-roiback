@@ -34,3 +34,12 @@ export const CardSectionBorder = styled(Container)`
     padding-left: 15px;
   }
 `;
+
+/**
+ * Centered CardSectionBorder component.
+ * @return {React.ReactElement} StyledCardSectionBorder
+ */
+export const CardSectionBorderTextAlignCenter = styled(CardSectionBorder)`
+  text-align: center;
+  padding-top: 75px;
+`;

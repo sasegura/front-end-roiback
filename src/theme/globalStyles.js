@@ -1,10 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 //Global styles of the App
-const GlobalStyles = createGlobalStyle`
-  html, body, #root{
-    height: 100%;
-  }
+const GlobalStyles = createGlobalStyle`  
   body {
     background-color: white;
     font-family: ${({ theme }) => theme.fonts};

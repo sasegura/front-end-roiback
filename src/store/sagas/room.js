@@ -6,6 +6,9 @@ import {
   roomsFetched,
 } from '../reducers/roomsSlice';
 
+/**
+ * Get rooms info by api call and update state.
+ */
 export function* loadRooms() {
   try {
     const rooms = yield call(getRooms);
@@ -16,6 +19,9 @@ export function* loadRooms() {
   }
 }
 
+/**
+ * Sagas that call rooms actions.
+ */
 export default function* roomsSaga() {
   yield takeEvery(fetchRooms.type, loadRooms);
 }
