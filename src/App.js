@@ -1,6 +1,5 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import './App.css';
 import Theme from './theme/theme';
 import store, { persistor } from './store';
 import AppRoutes from './routes';
